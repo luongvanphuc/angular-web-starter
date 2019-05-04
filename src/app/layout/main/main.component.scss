@@ -1,15 +1,9 @@
-// .app-body {
+@import 'settings/index';
 
-// }
+.app-main {
+  margin-top: $header-height;
+}
 
-// .app-header {
-
-// }
-
-// .app-main {
-
-// }
-
-// .app-content {
-
-// }
+.app-content {
+  padding-top: $size-lg * 2;
+}

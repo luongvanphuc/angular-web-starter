@@ -1,0 +1,237 @@
+<div class="block-site">
+  <div class="panel">
+    <div class="panel--header">Buttons</div>
+    <div class="panel--body">
+      <div class="font-h4 strong m-b-xs">Auto buttons</div>
+      <div class="m-b-md">
+        <button class="btn btn--sm m-r-xs">Submit</button>
+        <button class="btn m-r-xs">Submit</button>
+        <button class="btn btn--lg m-r-xs">Submit</button>
+      </div>
+      <div class="font-h4 strong m-b-xs">Fixed width buttons</div>
+      <div class="m-b-md">
+        <button class="btn btn--sm btn--fixed m-r-xs">Submit</button>
+        <button class="btn btn--fixed m-r-xs">Submit</button>
+        <button class="btn btn--lg btn--fixed m-r-xs">Submit</button>
+      </div>
+      <div class="font-h4 strong m-b-xs">Secondary buttons</div>
+      <div class="m-b-md">
+        <button class="btn btn--sm btn--secondary m-r-xs">Submit</button>
+        <button class="btn btn--secondary m-r-xs">Submit</button>
+        <button class="btn btn--lg btn--secondary m-r-xs">Submit</button>
+      </div>
+      <div class="font-h4 strong m-b-xs">Box/Inverted buttons</div>
+      <div class="m-b-md">
+        <button class="btn btn--sm btn--box m-r-xs">Submit</button>
+        <button class="btn btn--box m-r-xs">Submit</button>
+        <button class="btn btn--lg btn--box m-r-xs">Submit</button>
+      </div>
+      <div class="font-h4 strong m-b-xs">Box/Inverted secondary buttons</div>
+      <div class="m-b-md">
+        <button class="btn btn--sm btn--box btn--secondary m-r-xs">Submit</button>
+        <button class="btn btn--box btn--secondary m-r-xs">Submit</button>
+        <button class="btn btn--lg btn--box btn--secondary m-r-xs">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel--header">Checkbox & radio buttons</div>
+    <div class="panel--body">
+      <div class="font-h4 strong m-b-xs">Checkbox</div>
+      <div class="m-b-md">
+        <label class="checkbox-button d-block m-b-xs">
+          <input type="checkbox" name="checkbox-1" [(ngModel)]="checkbox1">
+          <span class="text">Lorem ipsum dolor sit amet</span>
+        </label>
+        <label class="checkbox-button d-block m-b-xs">
+          <input type="checkbox" name="checkbox-2" [(ngModel)]="checkbox2">
+          <span class="text">Consectetur adipiscing elit</span>
+        </label>
+        <label class="checkbox-button d-block m-b-xs">
+          <input type="checkbox" name="checkbox-3" [(ngModel)]="checkbox3">
+          <span class="text">Vivamus semper ex ut</span>
+        </label>
+        <label class="checkbox-button d-block m-b-xs">
+          <input type="checkbox" disabled>
+          <span class="text">Disabled</span>
+        </label>
+      </div>
+      <div class="font-h4 strong m-b-xs">Radio</div>
+      <div class="m-b-md">
+        <label class="radio-button m-r-md">
+          <input type="radio" name="gender" value="male" [(ngModel)]="radio">
+          <span class="text">Male</span>
+        </label>
+        <label class="radio-button m-r-md">
+          <input type="radio" name="gender" value="female" [(ngModel)]="radio">
+          <span class="text">Female</span>
+        </label>
+        <label class="radio-button m-r-md">
+          <input type="radio" name="gender" value="other" [(ngModel)]="radio">
+          <span class="text">Other</span>
+        </label>
+        <label class="radio-button m-r-md">
+          <input type="radio" name="gender" value="other" [(ngModel)]="radio" disabled>
+          <span class="text">Disabled</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel--header">Dropdown Menus</div>
+    <div class="panel--body">
+      <div class="form-row row">
+        <div class="form-control col-3">
+          <app-dropdown [data]="mockDropdownData" placeholder="Select one" [(ngModel)]="selectedDropdownData" (select)="handleSelectDropdownItem()">
+          </app-dropdown>
+        </div>
+        <div class="form-control col-3">
+          <button class="btn btn--sm" (click)="selectLorem()">Select Lorem</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel--header">Forms</div>
+    <div class="panel--body">
+      <form class="demo-form" role="form" (ngSubmit)="submitForm(form)" #form="ngForm">
+        <div class="form-row">
+          <div class="form-control">
+            <label class="form-control-label" for="email">Email <i class="asterisk"></i></label>
+            <input type="email" class="form-input" id="email" name="email" #email="ngModel" [(ngModel)]="registerModel.email" placeholder="mr.smith@company.com"
+              minlength=5 maxlength=100 email required tabindex="1">
+            <div *ngIf="email.touched && email.invalid" class="form-text text-danger">
+              <div *ngIf="email.errors.required">
+                Your email is required.
+              </div>
+              <div *ngIf="email.errors.email">
+                Your email is invalid.
+              </div>
+              <div *ngIf="email.errors.minlength">
+                Your email is required to be at least 5 characters.
+              </div>
+              <div *ngIf="email.errors.maxlength">
+                Your email cannot be longer than 100 characters.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row row">
+          <div class="form-control col">
+            <label class="form-control-label" for="firstName">First Name <i class="asterisk"></i></label>
+            <input type="text" class="form-input" id="firstName" name="firstName" #firstName="ngModel" [(ngModel)]="registerModel.firstName"
+              placeholder="Viggo" required minlength="1" maxlength="50" pattern="^[_'.@A-Za-z0-9-]*$" tabindex="2">
+            <div *ngIf="firstName.touched && firstName.invalid" class="form-text text-danger">
+              <div *ngIf="firstName.errors.required">
+                First name is required.
+              </div>
+              <div *ngIf="firstName.errors.minlength">
+                First name is required to be at least 1 character.
+              </div>
+              <div *ngIf="firstName.errors.maxlength">
+                First name cannot be longer than 50 characters.
+              </div>
+              <div *ngIf="firstName.errors.pattern">
+                First name can only contain letters and digits.
+              </div>
+            </div>
+          </div>
+          <div class="form-control col">
+            <label class="form-control-label" for="middleName">Middle Name</label>
+            <input type="text" class="form-input" id="middleName" name="middleName" #middleName="ngModel" [(ngModel)]="registerModel.middleName"
+              placeholder="Manthey" tabindex="3">
+          </div>
+          <div class="form-control col">
+            <label class="form-control-label" for="lastName">Last Name<i class="asterisk"></i></label>
+            <input type="text" class="form-input" id="lastName" name="lastName" #lastName="ngModel" [(ngModel)]="registerModel.lastName"
+              placeholder="Lange" tabindex="4" required>
+            <div *ngIf="lastName.touched && lastName.invalid" class="form-text text-danger">
+              <div *ngIf="lastName.errors.required">
+                Last name is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row row">
+          <div class="form-control col">
+            <label class="form-control-label">Date of Birth<i class="asterisk"></i></label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button class="btn btn--blank" type="button" (click)="birthDatePicker.toggle()">
+                  <i class="icon icon-calendar-o"></i>
+                </button>
+              </div>
+              <input class="form-input" placeholder="Date of Birth" name="dateOfBirth" #dateOfBirth="ngModel" [(ngModel)]="registerModel.dateOfBirth"
+                ngbDatepicker #birthDatePicker="ngbDatepicker" [startDate]="startDate" [minDate]="minBirthDate" [maxDate]="maxBirthDate" [readonly]="true" required tabindex="5">
+            </div>
+            <div *ngIf="dateOfBirth.touched && dateOfBirth.invalid" class="form-text text-danger">
+              <div *ngIf="dateOfBirth.errors.required">
+                Date of Birth is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-control col">
+            <label class="form-control-label">Date of your dog's birth<i class="asterisk"></i></label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button class="btn btn--blank" type="button" (click)="dateOfBirth.toggle()">
+                  <i class="icon icon-calendar-o"></i>
+                </button>
+              </div>
+              <input class="form-input" placeholder="Date of Birth 2" name="dateOfBirth2" #dateOfBirth2="ngModel" [(ngModel)]="registerModel.dateOfBirth2"
+                ngbDatepicker #dateOfBirth="ngbDatepicker" [startDate]="startDate" [minDate]="minBirthDate" [maxDate]="maxBirthDate" [readonly]="true" required tabindex="6">
+            </div>
+            <div *ngIf="dateOfBirth2.touched && dateOfBirth2.invalid" class="form-text text-danger">
+              <div *ngIf="dateOfBirth2.errors.required">
+                Date of Birth 2 is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row row">
+          <div class="form-control col-6">
+            <label class="form-control-label">Country <i class="asterisk"></i></label>
+            <app-dropdown [data]="CountriesList" name="country" [(ngModel)]="registerModel.country" #countryEl="ngModel" valueProp="code" labelProp="name"
+              placeholder="Select Country" [outputAsValue]="true" tabindex="7" required>
+            </app-dropdown>
+            <div class="form-text text-danger" *ngIf="countryEl.touched && countryEl.invalid">
+              <div *ngIf="countryEl.errors.required">
+                Country is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row row">
+          <div class="form-control col-6">
+            <label class="form-control-label" for="exName">Your ex's name</label>
+            <input type="text" class="form-input" id="exName" name="exName" [(ngModel)]="registerModel.exName" [class.ng-invalid]="errors.exName.length > 0" tabindex="8">
+            <div class="form-text">
+              This is an example of custom validation, should use regex in this specific case
+            </div>
+            <ng-container *ngIf="errors.exName.length > 0">
+              <div class="form-text text-danger" *ngFor="let err of errors.exName">{{ err }}</div>
+            </ng-container>
+          </div>
+          <div class="form-control col-6">
+            <label class="form-control-label" for="dogName">Your dog's name</label>
+            <input type="text" class="form-input" id="dogName" name="dogName" [(ngModel)]="registerModel.dogName" [class.ng-invalid]="errors.dogName.length > 0" tabindex="9">
+            <div class="form-text">
+              This is an example of custom validation, should use regex in this specific case
+            </div>
+            <ng-container *ngIf="errors.dogName.length > 0">
+              <div class="form-text text-danger" *ngFor="let err of errors.dogName">{{ err }}</div>
+            </ng-container>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

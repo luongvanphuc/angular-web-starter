@@ -5,6 +5,10 @@ import { Authorities } from '@constants';
 
 const lazyRoutes: Routes = [
   {
+    path: 'cheatsheet',
+    loadChildren: './cheatsheet/cheatsheet.module#CheatsheetModule',
+  },
+  {
     path: 'admin',
     loadChildren: './admin/admin.module#AdminModule',
     data: {

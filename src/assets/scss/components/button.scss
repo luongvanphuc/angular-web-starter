@@ -1,18 +1,14 @@
 $btn-default-fixed-width: 135px;
-$btn-default-padding: 13px;
+$btn-default-padding: 10px;
 $btn-default-font-size: 14px;
 
 $btn-lg-fixed-width: 160px;
-$btn-lg-padding: 16.5px;
+$btn-lg-padding: 13px;
 $btn-lg-font-size: 16px;
 
 $btn-sm-fixed-width: 123px;
-$btn-sm-padding: 12.5px;
+$btn-sm-padding: 8px;
 $btn-sm-font-size: 12px;
-
-$btn-xs-fixed-width: 123px;
-$btn-xs-padding: 8px;
-$btn-xs-font-size: 12px;
 
 $btn-side-padding: 30px;
 
@@ -20,10 +16,13 @@ $btn-side-padding: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
+  font-weight: normal;
   text-decoration: none;
   white-space: nowrap;
+  color: #ffffff;
+  background-color: $color-theme;
   border: 1px solid transparent;
+  border-radius: 10px;
   transition: $transition-common;
   user-select: none;
   cursor: pointer;
@@ -38,16 +37,6 @@ $btn-side-padding: 30px;
 
   &.btn--fixed {
     width: $btn-default-fixed-width;
-  }
-
-  // x-small button
-  &--xs {
-    padding: $btn-xs-padding 25px;
-    font-size: $btn-xs-font-size;
-
-    &.btn--fixed {
-      width: $btn-xs-fixed-width;
-    }
   }
 
   // small button

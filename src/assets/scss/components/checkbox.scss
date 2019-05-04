@@ -1,7 +1,6 @@
 .checkbox-button {
   display: inline-block;
   position: relative;
-  margin: 7px $size-sm 0 0;
   cursor: pointer;
 
   .text {
@@ -11,33 +10,30 @@
     &::before,
     &::after {
       font-family: 'b3shark', sans-serif;
+      font-size: 16px;
       position: absolute;
-      top: 0;
+      top: -2px;
       left: 0;
-      width: 15px;
-      height: 15px;
-      padding-left: 1px;
-      font-weight: normal;
+      width: 16px;
+      height: 16px;
     }
 
     &::before {
       display: block;
-      content: "\7c"; // icon-unchecked-box
-      font-size: 14px;
+      content: "\f096"; // icon-square-o
       color: $color-gray-3;
     }
 
     &::after {
       display: none;
-      content: "\73"; // icon-checked-box
-      font-size: 14px;
+      content: "\f046"; // icon-check-square-o
       color: $color-theme;
     }
   }
 
-  &.is-partial .text::after {
-    content: "\e005"; // icon-checked-box-neutral
-  }
+  // &.is-partial .text::after {
+  //   content: "\e005"; // icon-checked-box-neutral
+  // }
 
   input {
     display: none;

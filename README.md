@@ -6,13 +6,14 @@
 2. `yarn start` and `yarn lint` in two separate terminal windows/tabs
 
 # B3sharkWeb
-
+Techs: Angular 7, SCSS, Angular Bootstrap components (not including bootstrap styles), TSLint, Stylelint, nodemon
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
 
 ## Development server
 
 Run `yarn start` for a dev server. Navigate to `http://b3shark-local:4000/`. The app will automatically reload if you change any of the source files.
 Run `yarn lint` for linting source files. The linting jobs will automatically reload if you change any of the source files.
+Navigate to `http://b3shark-local:4000/cheatsheet` to view most of the web form controls
 
 ## Code scaffolding
 
