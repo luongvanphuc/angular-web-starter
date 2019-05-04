@@ -1,0 +1,19 @@
+.center-absolute {
+  @include center-absolute;
+}
+
+.center-x-absolute {
+  @include center-x-absolute;
+}
+
+.center-y-absolute {
+  @include center-y-absolute;
+}
+
+.fullwidth-absolute {
+  @include fullwidth-absolute;
+}
+
+.pos-r {
+  position: relative;
+}

@@ -1,0 +1,15 @@
+@mixin make-row-gap($gut) {
+  margin-left: ($gut / -1);
+  margin-right: ($gut / -1);
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: $gut;
+    padding-left: $gut;
+  }
+}
+
+@mixin make-col($percent) {
+  flex: 0 0 $percent;
+  max-width: $percent;
+}

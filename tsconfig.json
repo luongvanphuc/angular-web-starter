@@ -1,0 +1,78 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@app-constant": [
+        "src/app/app.constant"
+      ],
+      "@entities/*": [
+        "src/app/entities/*"
+      ],
+      "@auth/*": [
+        "src/app/shared/auth/*"
+      ],
+      "@components": [
+        "src/app/shared/components"
+      ],
+      "@components/*": [
+        "src/app/shared/components/*"
+      ],
+      "@constants": [
+        "src/app/shared/constants"
+      ],
+      "@constants/*": [
+        "src/app/shared/constants/*"
+      ],
+      "@directives": [
+        "src/app/shared/directives"
+      ],
+      "@directives/*": [
+        "src/app/shared/directives/*"
+      ],
+      "@helpers": [
+        "src/app/shared/helpers"
+      ],
+      "@helpers/*": [
+        "src/app/shared/helpers/*"
+      ],
+      "@interceptors": [
+        "src/app/shared/interceptors"
+      ],
+      "@interceptors/*": [
+        "src/app/shared/interceptors/*"
+      ],
+      "@pipes": [
+        "src/app/shared/pipes"
+      ],
+      "@pipes/*": [
+        "src/app/shared/pipes/*"
+      ],
+      "@services": [
+        "src/app/shared/services"
+      ],
+      "@services/*": [
+        "src/app/shared/services/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+/* stylelint-disable */
+ngb-datepicker {
+  max-height: none !important;
+
+  .ngb-dp-arrow-btn {
+    background-color: transparent;
+    color: $color-theme;
+
+    &:hover {
+      background-color: transparent;
+      color: $color-theme;
+    }
+  }
+
+  .ngb-dp-navigation-chevron::before {
+    border-width: 2px 2px 0 0 !important;
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  .btn-light.bg-primary {
+    border-radius: 3px;
+    background-color: $color-theme;
+  }
+
+  .ngb-dp-weekday {
+    font-weight: 600;
+    color: $color-theme;
+  }
+
+  select.custom-select {
+    width: calc(50% - 10px) !important;
+    margin: 0 5px;
+    padding-right: 0 !important;
+    color: $color-text;
+    background-color: #ffffff;
+    border: 0;
+    outline: 1px solid $color-border !important;
+  }
+}

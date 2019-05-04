@@ -1,0 +1,32 @@
+@mixin scroll-touch() {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin no-scrollbar() {
+  -ms-overflow-style: none; // IE 10+
+
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+  }
+}
+
+@mixin height-of-width($percent) {
+  &::before {
+    content: "";
+    padding-top: $percent;
+    display: table;
+  }
+}
+
+@mixin visibility($value) {
+  @if $value == hidden {
+    opacity: 0;
+    visibility: $value;
+  }
+
+  @else if $value == visible {
+    opacity: 1;
+    visibility: $value;
+  }
+}

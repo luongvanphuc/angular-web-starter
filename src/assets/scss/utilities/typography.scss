@@ -1,0 +1,173 @@
+h1,
+.font-h1 {
+  @include font-h1;
+}
+
+h2,
+.font-h2 {
+  @include font-h2;
+}
+
+h3,
+.font-h3 {
+  @include font-h3;
+}
+
+h4,
+.font-h4 {
+  @include font-h4;
+}
+
+h5,
+.font-h5 {
+  @include font-h5;
+}
+
+h6,
+.font-h6 {
+  @include font-h6;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.stronger {
+  font-weight: 700;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.no-wrap {
+  white-space: nowrap !important;
+}
+
+.pre {
+  white-space: pre-line;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media only screen and (max-width: $mq-tablet-max) {
+  .#{$tablet-prefix}-text-left {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: $mq-tablet-max) {
+  .#{$tablet-prefix}-text-right {
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: $mq-tablet-max) {
+  .#{$tablet-prefix}-text-center {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: $mq-mobile-max) {
+  .#{$mobile-prefix}-text-left {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: $mq-mobile-max) {
+  .#{$mobile-prefix}-text-right {
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: $mq-mobile-max) {
+  .#{$mobile-prefix}-text-center {
+    text-align: center;
+  }
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.line-height-none {
+  line-height: 0;
+}
+
+/* Text colors */
+.text-theme,
+.highlight {
+  color: $color-theme;
+}
+
+.text-primary {
+  color: $color-text;
+}
+
+.text-gray {
+  color: $color-text-gray;
+}
+
+.text-sub {
+  color: $color-text-sub;
+}
+
+.text-disabled {
+  color: $color-gray-4;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-danger {
+  color: $color-danger;
+}
+
+.text-warning {
+  color: $color-warning;
+}
+
+.text-success {
+  color: $color-success;
+}
+
+.break-all {
+  word-break: break-all;
+}

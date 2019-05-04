@@ -1,0 +1,60 @@
+/* stylelint-disable */
+.radio-button {
+  display: inline-block;
+  position: relative;
+  margin: 7px $size-sm 0 0;
+  cursor: pointer;
+
+  .text {
+    padding-left: 25px;
+
+    &::before,
+    &::after {
+      font-family: "b3shark", sans-serif;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      padding-left: 1px;
+      font-weight: normal;
+    }
+
+    &::before {
+      display: block;
+      content: "\2d";
+      font-size: 15px;
+      color: $color-gray-3;
+    }
+
+    &::after {
+      display: none;
+      content: "\2b";
+      font-size: 15px;
+      color: $color-theme;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked ~ .text {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: block;
+    }
+  }
+
+  &.disabled {
+    color: $color-gray-4;
+    cursor: not-allowed;
+
+    .text::before {
+      color: $color-gray-4;
+    }
+  }
+}

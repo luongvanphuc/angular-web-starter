@@ -1,0 +1,8 @@
+.block-site {
+  position: relative;
+  width: 100%;
+  max-width: 1140px + $site-padding * 2;
+  padding: 0 $site-padding;
+  margin-left: auto;
+  margin-right: auto;
+}

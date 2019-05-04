@@ -1,0 +1,65 @@
+.checkbox-button {
+  display: inline-block;
+  position: relative;
+  margin: 7px $size-sm 0 0;
+  cursor: pointer;
+
+  .text {
+    padding-left: 23px;
+    display: inline-block;
+
+    &::before,
+    &::after {
+      font-family: 'b3shark', sans-serif;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      padding-left: 1px;
+      font-weight: normal;
+    }
+
+    &::before {
+      display: block;
+      content: "\7c"; // icon-unchecked-box
+      font-size: 14px;
+      color: $color-gray-3;
+    }
+
+    &::after {
+      display: none;
+      content: "\73"; // icon-checked-box
+      font-size: 14px;
+      color: $color-theme;
+    }
+  }
+
+  &.is-partial .text::after {
+    content: "\e005"; // icon-checked-box-neutral
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked ~ .text {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: block;
+    }
+  }
+
+  input:disabled ~ .text {
+    color: $color-gray-4;
+    cursor: not-allowed;
+
+    &::before,
+    &::after {
+      color: $color-gray-4;
+    }
+  }
+}

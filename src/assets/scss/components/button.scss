@@ -1,0 +1,128 @@
+$btn-default-fixed-width: 135px;
+$btn-default-padding: 13px;
+$btn-default-font-size: 14px;
+
+$btn-lg-fixed-width: 160px;
+$btn-lg-padding: 16.5px;
+$btn-lg-font-size: 16px;
+
+$btn-sm-fixed-width: 123px;
+$btn-sm-padding: 12.5px;
+$btn-sm-font-size: 12px;
+
+$btn-xs-fixed-width: 123px;
+$btn-xs-padding: 8px;
+$btn-xs-font-size: 12px;
+
+$btn-side-padding: 30px;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition: $transition-common;
+  user-select: none;
+  cursor: pointer;
+
+  // default button
+  padding: $btn-default-padding $btn-side-padding;
+  font-size: $btn-default-font-size;
+
+  &:hover {
+    background-color: lighten($color-theme, 5%);
+  }
+
+  &.btn--fixed {
+    width: $btn-default-fixed-width;
+  }
+
+  // x-small button
+  &--xs {
+    padding: $btn-xs-padding 25px;
+    font-size: $btn-xs-font-size;
+
+    &.btn--fixed {
+      width: $btn-xs-fixed-width;
+    }
+  }
+
+  // small button
+  &--sm {
+    padding: $btn-sm-padding $btn-side-padding;
+    font-size: $btn-sm-font-size;
+
+    &.btn--fixed {
+      width: $btn-sm-fixed-width;
+    }
+  }
+
+  // large button
+  &--lg {
+    padding: $btn-lg-padding $btn-side-padding;
+    font-size: $btn-lg-font-size;
+
+    &.btn--fixed {
+      width: $btn-lg-fixed-width;
+    }
+  }
+
+  &--secondary {
+    color: $color-text;
+    background-color: $color-border;
+    border-color: $color-border;
+
+    &:hover {
+      background-color: lighten($color-border, 5%);
+      border-color: lighten($color-border, 5%);
+    }
+  }
+
+  // buttons with 1px border and white background
+  &--box {
+    color: $color-theme;
+    border-color: $color-theme;
+    background-color: #ffffff;
+
+    &:hover {
+      color: lighten($color-theme, 5%);
+      border-color: lighten($color-theme, 5%);
+      background-color: #ffffff;
+    }
+
+    &.btn--secondary {
+      color: $color-text;
+      border-color: $color-border;
+    }
+
+    &.btn--secondary:hover {
+      color: lighten($color-text, 5%);
+      border-color: lighten($color-border, 5%);
+    }
+  }
+
+  // buttons without border nor background
+  &--blank {
+    color: $color-theme;
+    border-color: transparent;
+    background-color: transparent;
+
+    &:hover {
+      color: $color-theme;
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+    &.btn--secondary {
+      color: $color-text;
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}

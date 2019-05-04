@@ -1,0 +1,12 @@
+// Simple responsive breakpoints
+// If you modify these values, consider updating the values in common.constants.ts file
+$mq-mobile-min: 320px;
+$mq-mobile-max: 767px;
+$mq-tablet-min: 768px;
+// $mq-tablet-mid: 992px;
+$mq-tablet-max: 1024px;
+$mq-desktop-min: 1025px;
+
+$mobile-prefix: 'mobi';
+$tablet-prefix: 'tabl';
+$desktop-prefix: 'desk';

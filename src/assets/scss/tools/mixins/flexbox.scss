@@ -1,0 +1,47 @@
+@mixin flex-grow-auto() {
+  flex: 1;
+  max-width: 100%;
+  min-width: 0;
+}
+
+@mixin flex-center-between() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-center-around() {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin flex-center-start() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-stretch-between() {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+@mixin flex-start-between() {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@mixin flex-end-between() {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
