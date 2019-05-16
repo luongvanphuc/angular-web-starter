@@ -72,7 +72,7 @@
           <span class="text">Other</span>
         </label>
         <label class="radio-button m-r-md">
-          <input type="radio" name="gender" value="other" [(ngModel)]="radio" disabled>
+          <input type="radio" name="gender" value="disabled" [(ngModel)]="radio" disabled>
           <span class="text">Disabled</span>
         </label>
       </div>
@@ -102,7 +102,7 @@
           <div class="form-control">
             <label class="form-control-label" for="email">Email <i class="asterisk"></i></label>
             <input type="email" class="form-input" id="email" name="email" #email="ngModel" [(ngModel)]="registerModel.email" placeholder="mr.smith@company.com"
-              minlength=5 maxlength=100 email required tabindex="1">
+              minlength=5 maxlength=100 email required>
             <div *ngIf="email.touched && email.invalid" class="form-text text-danger">
               <div *ngIf="email.errors.required">
                 Your email is required.
@@ -123,7 +123,7 @@
           <div class="form-control col">
             <label class="form-control-label" for="firstName">First Name <i class="asterisk"></i></label>
             <input type="text" class="form-input" id="firstName" name="firstName" #firstName="ngModel" [(ngModel)]="registerModel.firstName"
-              placeholder="Viggo" required minlength="1" maxlength="50" pattern="^[_'.@A-Za-z0-9-]*$" tabindex="2">
+              placeholder="Viggo" required minlength="1" maxlength="50" pattern="^[_'.@A-Za-z0-9-]*$">
             <div *ngIf="firstName.touched && firstName.invalid" class="form-text text-danger">
               <div *ngIf="firstName.errors.required">
                 First name is required.
@@ -142,12 +142,12 @@
           <div class="form-control col">
             <label class="form-control-label" for="middleName">Middle Name</label>
             <input type="text" class="form-input" id="middleName" name="middleName" #middleName="ngModel" [(ngModel)]="registerModel.middleName"
-              placeholder="Manthey" tabindex="3">
+              placeholder="Manthey">
           </div>
           <div class="form-control col">
             <label class="form-control-label" for="lastName">Last Name<i class="asterisk"></i></label>
             <input type="text" class="form-input" id="lastName" name="lastName" #lastName="ngModel" [(ngModel)]="registerModel.lastName"
-              placeholder="Lange" tabindex="4" required>
+              placeholder="Lange" required>
             <div *ngIf="lastName.touched && lastName.invalid" class="form-text text-danger">
               <div *ngIf="lastName.errors.required">
                 Last name is required.
@@ -159,32 +159,20 @@
         <div class="form-row row">
           <div class="form-control col">
             <label class="form-control-label">Date of Birth<i class="asterisk"></i></label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <button class="btn btn--blank" type="button" (click)="birthDatePicker.toggle()">
-                  <i class="icon icon-calendar-o"></i>
-                </button>
-              </div>
-              <input class="form-input" placeholder="Date of Birth" name="dateOfBirth" #dateOfBirth="ngModel" [(ngModel)]="registerModel.dateOfBirth"
-                ngbDatepicker #birthDatePicker="ngbDatepicker" [startDate]="startDate" [minDate]="minBirthDate" [maxDate]="maxBirthDate" [readonly]="true" required tabindex="5">
-            </div>
-            <div *ngIf="dateOfBirth.touched && dateOfBirth.invalid" class="form-text text-danger">
-              <div *ngIf="dateOfBirth.errors.required">
+            <app-datepicker [(ngModel)]="registerModel.dateOfBirth" name="dateOfBirth" placeholder="Date of Birth" #dateOfBirthEl="ngModel"
+              [startDate]="startDate" [minDate]="minBirthDate" [maxDate]="maxBirthDate" [required]="true"
+            ></app-datepicker>
+            <div *ngIf="dateOfBirthEl.touched && dateOfBirthEl.invalid" class="form-text text-danger">
+              <div *ngIf="dateOfBirthEl.errors.required">
                 Date of Birth is required.
               </div>
             </div>
           </div>
           <div class="form-control col">
             <label class="form-control-label">Date of your dog's birth<i class="asterisk"></i></label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <button class="btn btn--blank" type="button" (click)="dateOfBirth.toggle()">
-                  <i class="icon icon-calendar-o"></i>
-                </button>
-              </div>
-              <input class="form-input" placeholder="Date of Birth 2" name="dateOfBirth2" #dateOfBirth2="ngModel" [(ngModel)]="registerModel.dateOfBirth2"
-                ngbDatepicker #dateOfBirth="ngbDatepicker" [startDate]="startDate" [minDate]="minBirthDate" [maxDate]="maxBirthDate" [readonly]="true" required tabindex="6">
-            </div>
+            <app-datepicker [(ngModel)]="registerModel.dateOfBirth2" name="dateOfBirth2" placeholder="Date of Birth 2" #dateOfBirth2="ngModel"
+              [startDate]="startDate" [minDate]="minBirthDate" [maxDate]="maxBirthDate" [required]="true"
+            ></app-datepicker>
             <div *ngIf="dateOfBirth2.touched && dateOfBirth2.invalid" class="form-text text-danger">
               <div *ngIf="dateOfBirth2.errors.required">
                 Date of Birth 2 is required.
@@ -197,7 +185,7 @@
           <div class="form-control col-6">
             <label class="form-control-label">Country <i class="asterisk"></i></label>
             <app-dropdown [data]="CountriesList" name="country" [(ngModel)]="registerModel.country" #countryEl="ngModel" valueProp="code" labelProp="name"
-              placeholder="Select Country" [outputAsValue]="true" tabindex="7" required>
+              placeholder="Select Country" [outputAsValue]="true" required>
             </app-dropdown>
             <div class="form-text text-danger" *ngIf="countryEl.touched && countryEl.invalid">
               <div *ngIf="countryEl.errors.required">
@@ -210,7 +198,7 @@
         <div class="form-row row">
           <div class="form-control col-6">
             <label class="form-control-label" for="exName">Your ex's name</label>
-            <input type="text" class="form-input" id="exName" name="exName" [(ngModel)]="registerModel.exName" [class.ng-invalid]="errors.exName.length > 0" tabindex="8">
+            <input type="text" class="form-input" id="exName" name="exName" [(ngModel)]="registerModel.exName" [class.ng-invalid]="errors.exName.length > 0">
             <div class="form-text">
               This is an example of custom validation, should use regex in this specific case
             </div>
@@ -220,7 +208,7 @@
           </div>
           <div class="form-control col-6">
             <label class="form-control-label" for="dogName">Your dog's name</label>
-            <input type="text" class="form-input" id="dogName" name="dogName" [(ngModel)]="registerModel.dogName" [class.ng-invalid]="errors.dogName.length > 0" tabindex="9">
+            <input type="text" class="form-input" id="dogName" name="dogName" [(ngModel)]="registerModel.dogName" [class.ng-invalid]="errors.dogName.length > 0">
             <div class="form-text">
               This is an example of custom validation, should use regex in this specific case
             </div>

@@ -1,5 +1,6 @@
 // TODO: refactor these scss
 .form-dropdown {
+  position: relative;
   min-width: 120px;
   font-size: 13px;
   background-color: #ffffff;
@@ -29,6 +30,7 @@
 }
 
 .dropdown {
+  position: relative;
   cursor: pointer;
 
   &.disabled {
@@ -57,8 +59,9 @@
         position: fixed;
         top: 50% !important;
         left: 50% !important;
-        transform: translate(-50%, -50%);
         z-index: $z-index-modal-backdrop + 1;
+        transform: translate(-50%, -50%);
+        min-width: 0;
       }
     }
 
@@ -70,7 +73,7 @@
 
 .dropdown-menu {
   display: none;
-  min-width: 140px;
+  min-width: 100%;
   max-height: 250px;
   padding: 0;
   margin: 2px 0 0;

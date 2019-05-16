@@ -12,10 +12,11 @@
       font-family: 'b3shark', sans-serif;
       font-size: 16px;
       position: absolute;
-      top: -2px;
+      top: 2px;
       left: 0;
       width: 16px;
       height: 16px;
+      line-height: 16px;
     }
 
     &::before {
@@ -36,7 +37,10 @@
   // }
 
   input {
-    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
   }
 
   input:checked ~ .text {
@@ -50,12 +54,7 @@
   }
 
   input:disabled ~ .text {
-    color: $color-gray-4;
+    opacity: 0.5;
     cursor: not-allowed;
-
-    &::before,
-    &::after {
-      color: $color-gray-4;
-    }
   }
 }

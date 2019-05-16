@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { validateFormControls } from '@helpers';
+import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-cheatsheet',
@@ -281,13 +282,13 @@ export class CheatsheetComponent implements OnInit {
   startDate: { year: number; month: number; day: number; };
 
   constructor(
+    private calendar: NgbCalendar,
   ) { }
 
   ngOnInit() {
-    const today = new Date();
     this.startDate = { year: 1970, month: 1, day: 1 };
     this.minBirthDate = { year: 1900, month: 1, day: 1 };
-    this.maxBirthDate = { year: today.getFullYear(), month: today.getMonth() + 1, day: 1 };
+    this.maxBirthDate = this.calendar.getToday();
   }
 
   handleSelectDropdownItem() {

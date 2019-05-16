@@ -1,150 +1,130 @@
-// /* stylelint-disable */
-// $modal-br: 1px;
+/* stylelint-disable */
 
-// // Kill the scroll on the body
-// .modal-open {
-//   overflow: hidden;
-// }
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+}
 
-// // Container that the modal scrolls within
-// .modal {
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   z-index: $z-index-modal;
-//   display: none;
-//   overflow: hidden;
-//   outline: 0;
+// Container that the modal scrolls within
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-modal;
+  display: none;
+  overflow: hidden;
+  outline: 0;
 
-//   .modal-open & {
-//     overflow-x: hidden;
-//     overflow-y: auto;
-//   }
+  .modal-open & {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 
-//   &.transparent {
-//     .modal-content,
-//     .modal-header {
-//       background-color: transparent;
-//     }
-//   }
-// }
+  &.transparent {
+    .modal-content,
+    .modal-header {
+      background-color: transparent;
+    }
+  }
+}
 
-// // Shell div to position the modal with bottom padding
-// .modal-dialog {
-//   position: relative;
-//   width: 100vw;
-//   margin: 60px auto;
-//   // allow clicks to pass through for custom click handling to close modal
-//   pointer-events: none;
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: 100vw;
+  margin: 60px auto;
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
 
-//   @include flex-center;
+  @include flex-center;
 
-//   // When fading in the modal, animate it to slide down
-//   .modal.fade & {
-//     transform: translate(0, -25%);
-//     transition: $transition-common;
-//   }
+  // When fading in the modal, animate it to slide down
+  .modal.fade & {
+    transform: translate(0, -25%);
+    transition: $transition-common;
+  }
 
-//   .modal.show & {
-//     transform: translate(0, 0);
-//   }
+  .modal.show & {
+    transform: translate(0, 0);
+  }
+}
 
-//   .close {
-//     display: block;
-//     width: 35px;
-//     height: 35px;
-//     line-height: 35px;
-//     background-color: transparent;
-//     font-size: 16px;
-//     color: inherit;
-//     border: 0;
-//     padding: 0;
-//     cursor: pointer;
+.modal-content {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  pointer-events: auto;
+  background-color: #ffffff;
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: 1px 4px 12px 0 rgba(0, 0, 0, 0.3);
 
-//     &::before {
-//       content: "\71";
-//       font-size: 20px;
-//       font-family: "nextjuris";
-//     }
-//   }
-// }
+  @media only screen and (max-width: $mq-mobile-max) {
+    width: calc(100vw - #{$site-padding} * 2);
+  }
+}
 
-// .modal-content {
-//   position: relative;
-//   display: inline-block;
-//   width: auto;
-//   pointer-events: auto;
-//   background-color: #ffffff;
-//   outline: 0;
-//   border-radius: $modal-br;
-//   box-shadow: 1px 4px 12px 0 rgba(0, 0, 0, 0.3);
+.modal-header {
+  background-color: #ffffff;
+  height: 40px;
+  border-radius: 3px 3px 0 0;
 
-//   @media only screen and (max-width: $mq-mobile-max) {
-//     width: calc(100vw - #{$site-padding} * 2);
-//   }
-// }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    border: 0;
+    color: $color-gray-1;
+    background-color: transparent;
+    cursor: pointer;
 
-// .modal-header {
-//   background-color: #ffffff;
-//   height: 30px;
-//   border-radius: $modal-br $modal-br 0 0;
+    &::before {
+      content: "\e900";
+      font-size: 12px;
+      font-family: "b3shark";
+    }
+  }
+}
 
-//   @include flex-center-between;
+.modal-body {
+  position: relative;
+  padding: $size-sm * 2;
 
-//   .close {
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     width: 30px;
-//     height: 30px;
-//     line-height: 30px;
-//     font-size: 14px;
-//     background-color: $color-background-gray;
-//   }
-// }
+  @media only screen and (max-width: $mq-mobile-max) {
+    padding: $size-sm;
+  }
 
-// .modal-body {
-//   position: relative;
-//   padding: $size-sm*2;
+  &.md {
+    width: 600px;
+    max-width: 100%;
+  }
 
-//   @media only screen and (max-width: $mq-mobile-max) {
-//     padding: $size-sm;
-//   }
+  &.sd {
+    width: 400px;
+    max-width: 100%;
+  }
+}
 
-//   &.md {
-//     width: 600px;
-//     max-width: 100%;
-//   }
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-modal-backdrop !important;
+  background-color: rgba(0, 0, 0, 0.5);
 
-//   &.sd {
-//     width: 400px;
-//     max-width: 100%;
-//   }
+  &.fade {
+    opacity: 0;
+  }
 
-//   .close {
-//     position: absolute;
-//     top: 5px;
-//     right: 5px;
-//     z-index: 10;
-//   }
-// }
-
-// .modal-backdrop {
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   z-index: $z-index-modal-backdrop !important;
-//   background-color: rgba(0, 0, 0, 0.5);
-
-//   &.fade {
-//     opacity: 0;
-//   }
-
-//   &.show {
-//     opacity: 1;
-//   }
-// }
+  &.show {
+    opacity: 1;
+  }
+}
