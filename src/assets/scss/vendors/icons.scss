@@ -1,18 +1,18 @@
 /* stylelint-disable */
 @font-face {
-  font-family: 'b3shark';
-  src:  url('../fonts/b3shark.eot?j34wso');
-  src:  url('../fonts/b3shark.eot?j34wso#iefix') format('embedded-opentype'),
-    url('../fonts/b3shark.ttf?j34wso') format('truetype'),
-    url('../fonts/b3shark.woff?j34wso') format('woff'),
-    url('../fonts/b3shark.svg?j34wso#b3shark') format('svg');
+  font-family: 'icon-font';
+  src:  url('../fonts/icon-font.eot?j34wso');
+  src:  url('../fonts/icon-font.eot?j34wso#iefix') format('embedded-opentype'),
+    url('../fonts/icon-font.ttf?j34wso') format('truetype'),
+    url('../fonts/icon-font.woff?j34wso') format('woff'),
+    url('../fonts/icon-font.svg?j34wso#icon-font') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'b3shark' !important;
+  font-family: 'icon-font' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;

@@ -9,7 +9,7 @@
 
     &::before,
     &::after {
-      font-family: 'b3shark', sans-serif;
+      font-family: 'icon-font', sans-serif;
       font-size: 16px;
       position: absolute;
       top: 2px;
@@ -31,10 +31,6 @@
       color: $color-theme;
     }
   }
-
-  // &.is-partial .text::after {
-  //   content: "\e005"; // icon-checked-box-neutral
-  // }
 
   input {
     position: absolute;

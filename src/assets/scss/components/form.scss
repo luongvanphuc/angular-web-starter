@@ -9,8 +9,7 @@
   }
 }
 
-// TODO: consider to rename it to .form-control__label according to BEM
-.form-control-label {
+.form-label {
   display: block;
   min-height: 18px;
   margin-bottom: 6px;
@@ -18,16 +17,10 @@
   font-weight: 600;
 }
 
-.form-text {
-  font-size: 11px;
-  margin-top: 5px;
-}
-
-// TODO: consider to rename it to .form-control__input according to BEM
 .form-input {
   width: 100%;
   color: $color-text;
-  padding: 7px $size-sm;
+  padding: 8px $size-sm;
   border: 1px solid $color-border;
   transition: $transition-common;
   resize: vertical;
@@ -68,6 +61,11 @@
   }
 }
 
+.form-text {
+  font-size: 11px;
+  margin-top: 5px;
+}
+
 .input-group {
   display: flex;
   position: relative;
@@ -85,6 +83,13 @@
     width: 100%;
     height: 100%;
     color: $color-gray-2;
+  }
+
+  .text {
+    height: 100%;
+    padding: 0 $size-xs;
+
+    @include flex-center;
   }
 }
 

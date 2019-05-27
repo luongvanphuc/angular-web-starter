@@ -1,14 +1,17 @@
 $btn-default-fixed-width: 135px;
 $btn-default-padding: 10px;
 $btn-default-font-size: 14px;
+$btn-default-line-height: 18px;
 
 $btn-lg-fixed-width: 160px;
-$btn-lg-padding: 13px;
+$btn-lg-padding: 11px;
 $btn-lg-font-size: 16px;
+$btn-lg-line-height: 22px;
 
 $btn-sm-fixed-width: 123px;
 $btn-sm-padding: 8px;
 $btn-sm-font-size: 12px;
+$btn-sm-line-height: 16px;
 
 $btn-side-padding: 30px;
 
@@ -16,13 +19,13 @@ $btn-side-padding: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: normal;
+  font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
   color: #ffffff;
   background-color: $color-theme;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 3px;
   transition: $transition-common;
   user-select: none;
   cursor: pointer;
@@ -30,6 +33,7 @@ $btn-side-padding: 30px;
   // default button
   padding: $btn-default-padding $btn-side-padding;
   font-size: $btn-default-font-size;
+  line-height: $btn-default-line-height;
 
   &:hover {
     background-color: lighten($color-theme, 5%);
@@ -43,6 +47,7 @@ $btn-side-padding: 30px;
   &--sm {
     padding: $btn-sm-padding $btn-side-padding;
     font-size: $btn-sm-font-size;
+    line-height: $btn-sm-line-height;
 
     &.btn--fixed {
       width: $btn-sm-fixed-width;
@@ -53,6 +58,7 @@ $btn-side-padding: 30px;
   &--lg {
     padding: $btn-lg-padding $btn-side-padding;
     font-size: $btn-lg-font-size;
+    line-height: $btn-lg-line-height;
 
     &.btn--fixed {
       width: $btn-lg-fixed-width;

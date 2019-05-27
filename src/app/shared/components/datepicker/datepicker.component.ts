@@ -9,7 +9,7 @@ const CUSTOM_VALUE_ACCESSOR = {
 };
 
 @Component({
-  selector: 'b3-datepicker',
+  selector: 'app-datepicker',
   templateUrl: './datepicker.component.html',
   styleUrls: ['./datepicker.component.scss'],
   providers: [
@@ -50,9 +50,10 @@ export class DatepickerComponent implements ControlValueAccessor {
     this.toggle();
   }
 
-  @HostListener('click') public click() {
-    this.toggle();
-  }
+  // @HostListener('click', ['$event.target']) public click(target) {
+  //   console.log(target);
+  //   this.toggle();
+  // }
 
   private toggle() {
     if (this.dpElement) {

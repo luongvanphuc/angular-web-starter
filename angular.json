@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "b3shark-web": {
+    "web": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/b3shark-web",
+            "outputPath": "dist/web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,19 +66,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "b3shark-web:build",
+            "browserTarget": "web:build",
             "port": 4000
           },
           "configurations": {
             "production": {
-              "browserTarget": "b3shark-web:build:production"
+              "browserTarget": "web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "b3shark-web:build"
+            "browserTarget": "web:build"
           }
         },
         "lint": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "b3shark-web-e2e": {
+    "web-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -104,11 +104,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "b3shark-web:serve"
+            "devServerTarget": "web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "b3shark-web:serve:production"
+              "devServerTarget": "web:serve:production"
             }
           }
         },
@@ -124,5 +124,5 @@
       }
     }
   },
-  "defaultProject": "b3shark-web"
+  "defaultProject": "web"
 }

@@ -1,19 +1,16 @@
 # NOTES Before starting
-- This project was cloned from B3Shark starter project (initial & empty project), so there will be places that are named 'b3shark'.
-- You may want to search 'b3shark' (case insensitive) in all files and replace with your own project name.
 - Then run these commands:
 1. `yarn install`
 2. `yarn start` and `yarn lint` in two separate terminal windows/tabs
 
-# B3sharkWeb
 Techs: Angular 7, SCSS, Angular Bootstrap components (not including bootstrap styles), TSLint, Stylelint, nodemon
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
 
 ## Development server
 
-Run `yarn start` for a dev server. Navigate to `http://b3shark-local:4000/`. The app will automatically reload if you change any of the source files.
+Run `yarn start` for a dev server. Navigate to `http://localhost:4000/`. The app will automatically reload if you change any of the source files.
 Run `yarn lint` for linting source files. The linting jobs will automatically reload if you change any of the source files.
-Navigate to `http://b3shark-local:4000/cheatsheet` to view most of the web form controls
+Navigate to `http://localhost:4000/cheatsheet` to view most of the web form controls
 
 ## Code scaffolding
 

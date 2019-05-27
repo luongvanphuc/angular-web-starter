@@ -12,7 +12,7 @@ import { NgbDateNativeAdapter, NgbDateFRParserFormatter } from './adapters';
   imports: [
     RouterModule,
     NgbModule,
-    NgxWebstorageModule.forRoot({ prefix: 'b3', separator: '-', caseSensitive: true }),
+    NgxWebstorageModule.forRoot({ prefix: 'app', separator: '-', caseSensitive: true }),
   ],
   providers: [
     {

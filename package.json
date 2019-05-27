@@ -1,9 +1,9 @@
 {
-  "name": "b3shark-web",
+  "name": "web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host b3shark-local --port 4001",
+    "start": "ng serve",
     "build": "ng build --configuration=production",
     "build:stats": "npm run build:prod -- --stats-json",
     "lint": "nodemon --exec \"npm run lint:all || exit 1\" --ext ts,html,scss",
@@ -12,7 +12,7 @@
     "lint:all": "npm run lint:scripts && npm run lint:styles",
     "lint:scripts": "ng lint",
     "lint:styles": "stylelint \"src/**/*.scss\"",
-    "bundle-report": "webpack-bundle-analyzer dist/b3shark-web/stats.json",
+    "bundle-report": "webpack-bundle-analyzer dist/web/stats.json",
     "e2e": "ng e2e"
   },
   "private": true,

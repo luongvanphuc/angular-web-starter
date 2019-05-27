@@ -100,7 +100,7 @@
       <form class="demo-form" role="form" (ngSubmit)="submitForm(form)" #form="ngForm">
         <div class="form-row">
           <div class="form-control">
-            <label class="form-control-label" for="email">Email <i class="asterisk"></i></label>
+            <label class="form-label" for="email">Email <i class="asterisk"></i></label>
             <input type="email" class="form-input" id="email" name="email" #email="ngModel" [(ngModel)]="registerModel.email" placeholder="mr.smith@company.com"
               minlength=5 maxlength=100 email required>
             <div *ngIf="email.touched && email.invalid" class="form-text text-danger">
@@ -121,7 +121,7 @@
         </div>
         <div class="form-row row">
           <div class="form-control col">
-            <label class="form-control-label" for="firstName">First Name <i class="asterisk"></i></label>
+            <label class="form-label" for="firstName">First Name <i class="asterisk"></i></label>
             <input type="text" class="form-input" id="firstName" name="firstName" #firstName="ngModel" [(ngModel)]="registerModel.firstName"
               placeholder="Viggo" required minlength="1" maxlength="50" pattern="^[_'.@A-Za-z0-9-]*$">
             <div *ngIf="firstName.touched && firstName.invalid" class="form-text text-danger">
@@ -140,12 +140,12 @@
             </div>
           </div>
           <div class="form-control col">
-            <label class="form-control-label" for="middleName">Middle Name</label>
+            <label class="form-label" for="middleName">Middle Name</label>
             <input type="text" class="form-input" id="middleName" name="middleName" #middleName="ngModel" [(ngModel)]="registerModel.middleName"
               placeholder="Manthey">
           </div>
           <div class="form-control col">
-            <label class="form-control-label" for="lastName">Last Name<i class="asterisk"></i></label>
+            <label class="form-label" for="lastName">Last Name<i class="asterisk"></i></label>
             <input type="text" class="form-input" id="lastName" name="lastName" #lastName="ngModel" [(ngModel)]="registerModel.lastName"
               placeholder="Lange" required>
             <div *ngIf="lastName.touched && lastName.invalid" class="form-text text-danger">
@@ -158,7 +158,7 @@
 
         <div class="form-row row">
           <div class="form-control col">
-            <label class="form-control-label">Date of Birth<i class="asterisk"></i></label>
+            <label class="form-label">Date of Birth<i class="asterisk"></i></label>
             <app-datepicker [(ngModel)]="registerModel.dateOfBirth" name="dateOfBirth" placeholder="Date of Birth" #dateOfBirthEl="ngModel"
               [startDate]="startDate" [minDate]="minBirthDate" [maxDate]="maxBirthDate" [required]="true"
             ></app-datepicker>
@@ -169,7 +169,7 @@
             </div>
           </div>
           <div class="form-control col">
-            <label class="form-control-label">Date of your dog's birth<i class="asterisk"></i></label>
+            <label class="form-label">Date of your dog's birth<i class="asterisk"></i></label>
             <app-datepicker [(ngModel)]="registerModel.dateOfBirth2" name="dateOfBirth2" placeholder="Date of Birth 2" #dateOfBirth2="ngModel"
               [startDate]="startDate" [minDate]="minBirthDate" [maxDate]="maxBirthDate" [required]="true"
             ></app-datepicker>
@@ -183,7 +183,7 @@
 
         <div class="form-row row">
           <div class="form-control col-6">
-            <label class="form-control-label">Country <i class="asterisk"></i></label>
+            <label class="form-label">Country <i class="asterisk"></i></label>
             <app-dropdown [data]="CountriesList" name="country" [(ngModel)]="registerModel.country" #countryEl="ngModel" valueProp="code" labelProp="name"
               placeholder="Select Country" [outputAsValue]="true" required>
             </app-dropdown>
@@ -197,7 +197,7 @@
 
         <div class="form-row row">
           <div class="form-control col-6">
-            <label class="form-control-label" for="exName">Your ex's name</label>
+            <label class="form-label" for="exName">Your ex's name</label>
             <input type="text" class="form-input" id="exName" name="exName" [(ngModel)]="registerModel.exName" [class.ng-invalid]="errors.exName.length > 0">
             <div class="form-text">
               This is an example of custom validation, should use regex in this specific case
@@ -207,7 +207,7 @@
             </ng-container>
           </div>
           <div class="form-control col-6">
-            <label class="form-control-label" for="dogName">Your dog's name</label>
+            <label class="form-label" for="dogName">Your dog's name</label>
             <input type="text" class="form-input" id="dogName" name="dogName" [(ngModel)]="registerModel.dogName" [class.ng-invalid]="errors.dogName.length > 0">
             <div class="form-text">
               This is an example of custom validation, should use regex in this specific case
