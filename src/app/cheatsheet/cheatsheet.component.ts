@@ -11,6 +11,9 @@ import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CheatsheetComponent implements OnInit {
 
+  asyncBtnIsLoading = false;
+  asyncBtnIsLoadingTwo = false;
+
   mockDropdownData: Array<any> = [
     { value: '1', label: 'Option 1' },
     { value: '2', label: 'Action' },
@@ -322,6 +325,20 @@ export class CheatsheetComponent implements OnInit {
     }
 
     return valid;
+  }
+
+  loadDataFromServer() {
+    this.asyncBtnIsLoading = true;
+    setTimeout(() => {
+      this.asyncBtnIsLoading = false;
+    }, 1000);
+  }
+
+  loadDataFromServerTwo() {
+    this.asyncBtnIsLoadingTwo = true;
+    setTimeout(() => {
+      this.asyncBtnIsLoadingTwo = false;
+    }, 1000);
   }
 
   submitForm(form: NgForm) {

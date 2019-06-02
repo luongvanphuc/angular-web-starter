@@ -121,3 +121,15 @@ $btn-side-padding: 30px;
     opacity: 0.6;
   }
 }
+
+.btn-loading {
+  position: relative;
+
+  &::after {
+    content: '\f021'; // icon-refresh
+    font-family: 'icon-font';
+    color: #ffffff;
+    animation: spin 2s infinite linear;
+    position: absolute;
+  }
+}

@@ -1,1 +1,10 @@
 $transition-common: all 0.2s ease-in-out;
+
+@-webkit-keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}

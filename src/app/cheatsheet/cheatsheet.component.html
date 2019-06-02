@@ -36,6 +36,22 @@
   </div>
 
   <div class="panel">
+    <div class="panel--header">Async Buttons</div>
+    <div class="panel--body">
+      <button class="btn m-r-xs" (click)="loadDataFromServer()"
+        [appButton]="asyncBtnIsLoading"
+        [autoRelease]="false"
+        submittedText="Submitted"
+      >
+        Submit once
+      </button>
+      <button class="btn m-r-xs" (click)="loadDataFromServerTwo()"
+        [appButton]="asyncBtnIsLoadingTwo"
+      >Submit then release</button>
+    </div>
+  </div>
+
+  <div class="panel">
     <div class="panel--header">Checkbox & radio buttons</div>
     <div class="panel--body">
       <div class="font-h4 strong m-b-xs">Checkbox</div>

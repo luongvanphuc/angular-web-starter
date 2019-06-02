@@ -1,29 +1,3 @@
-.faded {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s, transform 1s;
-
-  &.loaded {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  &.delay-1 {
-    -webkit-transition-delay: 0.5s;
-    transition-delay: 0.5s;
-  }
-
-  &.delay-2 {
-    -webkit-transition-delay: 1s;
-    transition-delay: 1s;
-  }
-
-  &.delay-3 {
-    -webkit-transition-delay: 1.5s;
-    transition-delay: 1.5s;
-  }
-}
-
 .spin {
   animation: spin 2s infinite linear;
 }
