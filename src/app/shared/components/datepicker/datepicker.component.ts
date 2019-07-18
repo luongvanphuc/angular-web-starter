@@ -50,12 +50,7 @@ export class DatepickerComponent implements ControlValueAccessor {
     this.toggle();
   }
 
-  // @HostListener('click', ['$event.target']) public click(target) {
-  //   console.log(target);
-  //   this.toggle();
-  // }
-
-  private toggle() {
+  toggle() {
     if (this.dpElement) {
       this.dpElement.toggle();
 
@@ -69,8 +64,11 @@ export class DatepickerComponent implements ControlValueAccessor {
   onTouched = () => { };
 
   writeValue(value: any): void {
-    this.value = value;
-    this.onChange(value);
+    this.value = typeof value === 'string' ?
+      new Date(value) :
+      value;
+
+    this.onChange(this.value);
   }
 
   registerOnChange(fn: (_: any) => void): void { this.onChange = fn; }

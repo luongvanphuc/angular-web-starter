@@ -133,3 +133,32 @@ $btn-side-padding: 30px;
     position: absolute;
   }
 }
+
+.btn-ellipsis {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  color: $color-text-gray;
+  background-color: $color-background-gray-light;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: $transition-common;
+
+  @include flex-center;
+
+  &::after {
+    content: "\f141"; // icon-ellipsis-h
+    font-family: 'b3shark';
+  }
+
+  &:hover {
+    background-color: darken($color-background-gray-light, 3%);
+  }
+
+  &.is-blank {
+    background-color: transparent;
+  }
+}

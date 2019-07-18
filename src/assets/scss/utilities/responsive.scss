@@ -19,11 +19,6 @@
 
 // UTILITIES
 @media only screen and (max-width: $mq-tablet-max) {
-  .tabl-side-pad {
-    padding-left: $site-padding;
-    padding-right: $site-padding;
-  }
-
   .tabl-d-block {
     display: block;
   }
@@ -34,16 +29,6 @@
 }
 
 @media only screen and (max-width: $mq-mobile-max) {
-  .mobi-side-pad {
-    padding-left: $site-padding;
-    padding-right: $site-padding;
-  }
-
-  .mobi-fullscreen {
-    width: 100vw;
-    margin-left: -$site-padding;
-  }
-
   .mobi-d-block {
     display: block;
   }
