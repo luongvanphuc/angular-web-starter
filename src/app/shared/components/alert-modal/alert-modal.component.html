@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <button data-dismiss="modal" class="close" type="button" (click)="activeModal.dismiss('closed')">
+    <i class="icon icon-cancel icon--sm"></i>
+  </button>
+</div>
+<div class="modal-body sm">
+  <div class="alert-body">
+    <div class="title" *ngIf="title">
+      {{ title }}
+    </div>
+    <div [innerHTML]="content | safeHtml" *ngIf="content"></div>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn--fixed" (click)="submit()">{{ buttonLabel }}</button>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef, HostListener, ViewChild, HostBinding, ElementRef } from '@angular/core';
+import { Component, Input, forwardRef, HostListener, ViewChild, HostBinding } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 
@@ -18,7 +18,7 @@ const CUSTOM_VALUE_ACCESSOR = {
 })
 
 export class DatepickerComponent implements ControlValueAccessor {
-  @ViewChild('dpElement') dpElement;
+  @ViewChild('dpElement', { static: true }) dpElement;
 
   // placeholder will be ignored if selectFirst is true
   @Input() placeholder = '';

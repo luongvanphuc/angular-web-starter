@@ -1,0 +1,8 @@
+.async-loading-div::after {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url("/assets/images/icons/ico-spinner.svg") no-repeat right/contain;
+  animation: spin 2s infinite linear;
+}

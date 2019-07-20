@@ -27,7 +27,10 @@ export class CheatsheetComponent implements OnInit {
   checkbox2: boolean;
   checkbox3: boolean;
   radio: any;
-  registerModel: any = {};
+  registerModel: any = {
+    country: null,
+    dateOfBirth2: null,
+  };
 
   CountriesList = [
     { name: 'Afghanistan', code: 'AF' },

@@ -1,0 +1,14 @@
+@import 'settings/index';
+
+.confirm-body {
+  max-width: 320px;
+  min-height: 70px;
+  margin: 0 auto $size-xl;
+  text-align: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: $size-xs;
+}

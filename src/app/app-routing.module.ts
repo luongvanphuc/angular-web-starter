@@ -6,11 +6,11 @@ import { Authorities } from '@constants';
 const lazyRoutes: Routes = [
   {
     path: 'cheatsheet',
-    loadChildren: './cheatsheet/cheatsheet.module#CheatsheetModule',
+    loadChildren: () => import('./cheatsheet/cheatsheet.module').then(m => m.CheatsheetModule),
   },
   {
     path: 'admin',
-    loadChildren: './admin/admin.module#AdminModule',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
     data: {
       authorities: [Authorities.ADMIN],
     },

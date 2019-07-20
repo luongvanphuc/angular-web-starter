@@ -39,16 +39,6 @@
   pointer-events: none;
 
   @include flex-center;
-
-  // When fading in the modal, animate it to slide down
-  .modal.fade & {
-    transform: translate(0, -25%);
-    transition: $transition-common;
-  }
-
-  .modal.show & {
-    transform: translate(0, 0);
-  }
 }
 
 .modal-content {
@@ -58,8 +48,10 @@
   pointer-events: auto;
   background-color: #ffffff;
   outline: 0;
-  border-radius: 3px;
   box-shadow: 1px 4px 12px 0 rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.3s ease-in-out 0.1s forwards;
 
   @media only screen and (max-width: $mq-mobile-max) {
     width: calc(100vw - #{$site-padding} * 2);
@@ -68,46 +60,42 @@
 
 .modal-header {
   background-color: #ffffff;
-  height: 40px;
-  border-radius: 3px 3px 0 0;
+  height: 32px;
 
   .close {
     position: absolute;
     top: 0;
     right: 0;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
     font-size: 14px;
     border: 0;
-    color: $color-gray-1;
-    background-color: transparent;
+    color: $color-gray-2;
+    background-color: $color-gray-5;
     cursor: pointer;
-
-    &::before {
-      content: "\e900";
-      font-size: 12px;
-      font-family: "icon-font";
-    }
   }
 }
 
 .modal-body {
   position: relative;
-  padding: $size-sm * 2;
+  padding: 20px $size-lg 45px;
+  max-width: 100%;
 
   @media only screen and (max-width: $mq-mobile-max) {
-    padding: $size-sm;
+    padding: $size-sm $size-sm $size-xl;
+  }
+
+  &.sm {
+    width: 500px;
   }
 
   &.md {
-    width: 600px;
-    max-width: 100%;
+    width: 750px;
   }
 
-  &.sd {
-    width: 400px;
-    max-width: 100%;
+  &.lg {
+    width: 1000px;
   }
 }
 
@@ -126,5 +114,17 @@
 
   &.show {
     opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

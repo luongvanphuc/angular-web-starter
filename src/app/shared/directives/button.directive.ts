@@ -1,12 +1,13 @@
-import { Directive, Input, OnChanges, Renderer2, ElementRef, SimpleChanges, Inject, HostBinding } from '@angular/core';
+import { Directive, Input, OnChanges, Renderer2, ElementRef, SimpleChanges, HostBinding } from '@angular/core';
 
 @Directive({
   selector: 'button[appButton]',
 })
 export class ButtonDirective implements OnChanges {
-  @Input('appButton') isLoading: any;
-  @Input('autoRelease') autoRelease = true;
-  @Input('submittedText') submittedText = 'Submitted'; // only if autoRelease = false
+  // tslint:disable-next-line:no-input-rename
+  @Input('appButton') isLoading: boolean;
+  @Input() autoRelease = true;
+  @Input() submittedText = 'Submitted'; // only if autoRelease = false
 
   constructor(
     private elementRef: ElementRef,

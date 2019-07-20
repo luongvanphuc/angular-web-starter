@@ -57,15 +57,15 @@
       <div class="font-h4 strong m-b-xs">Checkbox</div>
       <div class="m-b-md">
         <label class="checkbox-button d-block m-b-xs">
-          <input type="checkbox" name="checkbox-1" [(ngModel)]="checkbox1">
+          <input type="checkbox" name="checkbox-1" [(ngModel)]="checkbox1" [ngModelOptions]="{standalone: true}">
           <span class="text">Lorem ipsum dolor sit amet</span>
         </label>
         <label class="checkbox-button d-block m-b-xs">
-          <input type="checkbox" name="checkbox-2" [(ngModel)]="checkbox2">
+          <input type="checkbox" name="checkbox-2" [(ngModel)]="checkbox2" [ngModelOptions]="{standalone: true}">
           <span class="text">Consectetur adipiscing elit</span>
         </label>
         <label class="checkbox-button d-block m-b-xs">
-          <input type="checkbox" name="checkbox-3" [(ngModel)]="checkbox3">
+          <input type="checkbox" name="checkbox-3" [(ngModel)]="checkbox3" [ngModelOptions]="{standalone: true}">
           <span class="text">Vivamus semper ex ut</span>
         </label>
         <label class="checkbox-button d-block m-b-xs">
@@ -100,8 +100,8 @@
     <div class="panel--body">
       <div class="form-row row">
         <div class="form-control col-3">
-          <app-dropdown [data]="mockDropdownData" placeholder="Select one" [(ngModel)]="selectedDropdownData" (select)="handleSelectDropdownItem()">
-          </app-dropdown>
+          <ng-select [items]="mockDropdownData" [(ngModel)]="selectedDropdownData" [searchable]="false" bindLabel="label" [ngModelOptions]="{standalone: true}">
+          </ng-select>
         </div>
         <div class="form-control col-3">
           <button class="btn btn--sm" (click)="selectLorem()">Select Lorem</button>
@@ -200,9 +200,8 @@
         <div class="form-row row">
           <div class="form-control col-6">
             <label class="form-label">Country <i class="asterisk"></i></label>
-            <app-dropdown [data]="CountriesList" name="country" [(ngModel)]="registerModel.country" #countryEl="ngModel" valueProp="code" labelProp="name"
-              placeholder="Select Country" [outputAsValue]="true" required>
-            </app-dropdown>
+            <ng-select [items]="CountriesList" [searchable]="true" #countryEl="ngModel" bindLabel="name" name="country" [(ngModel)]="registerModel.country" [required]="true">
+            </ng-select>
             <div class="form-text text-danger" *ngIf="countryEl.touched && countryEl.invalid">
               <div *ngIf="countryEl.errors.required">
                 Country is required.

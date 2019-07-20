@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgbModule, NgbDateParserFormatter, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { NgbDateNativeAdapter, NgbDateFRParserFormatter } from './adapters';
 
@@ -30,6 +31,7 @@ import { NgbDateNativeAdapter, NgbDateFRParserFormatter } from './adapters';
     CommonModule,
     NgbModule,
     NgxWebstorageModule,
+    NgSelectModule,
   ],
 })
 export class SharedLibsModule { }

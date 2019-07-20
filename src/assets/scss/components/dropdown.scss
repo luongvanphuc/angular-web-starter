@@ -1,126 +1,37 @@
-// TODO: refactor these scss
-.form-dropdown {
-  position: relative;
-  min-width: 120px;
-  font-size: 13px;
-  background-color: #ffffff;
-
-  .dropdown-toggle {
-    position: relative;
-    display: block;
-    padding: 7px $size-sm * 2 7px $size-sm;
-    border: 1px solid $color-border;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-
-    &::after {
-      content: '\f107'; // icon-angle-down
-      position: absolute;
-      top: 5px;
-      right: 12px;
-      border: 0;
-      font-family: 'icon-font', sans-serif;
-      font-size: 16px;
-      color: $color-gray-2;
-      background-color: #ffffff;
-    }
-  }
-}
-
-.dropdown {
-  position: relative;
-  cursor: pointer;
-
-  &.disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-    background-color: $color-background-gray-light;
-  }
-
-  @media only screen and (max-width: $mq-mobile-max) {
-    &.mobi-as-modal {
-      &::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: $z-index-modal-backdrop;
-        background-color: rgba(0, 0, 0, 0.5);
-        transition: $transition-common;
-
-        @include visibility(hidden);
-      }
-
-      .dropdown-menu {
-        position: fixed;
-        top: 50% !important;
-        left: 50% !important;
-        z-index: $z-index-modal-backdrop + 1;
-        transform: translate(-50%, -50%);
-        min-width: 0;
-      }
-    }
-
-    &.show.mobi-as-modal::before {
-      @include visibility(visible);
-    }
-  }
-}
-
 .dropdown-menu {
   display: none;
-  min-width: 100%;
-  max-height: 250px;
+  min-width: 100px;
+  max-height: none;
+  margin: $size-xs 0 0;
   padding: 0;
-  margin: 2px 0 0;
-  overflow-y: auto;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: $z-index-dropdown;
   font-size: 13px;
-  list-style: none;
-  color: inherit;
   background-color: #ffffff;
   box-shadow: $color-box-shadow;
+  z-index: $z-index-dropdown;
 
   &.show {
     display: block;
   }
-
-  &.no-scrollbar {
-    max-height: none;
-  }
 }
 
-.dropdown-menu-item {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: $size-xs $size-sm;
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-item {
+  display: block;
+  padding: $size-xs $size-xs * 2;
   color: $color-text;
   background-color: #ffffff;
   transition: $transition-common;
-  white-space: nowrap;
-  user-select: none;
   cursor: pointer;
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: $color-background-gray-light;
   }
 
   &.active {
-    color: #ffffff;
-    background-color: $color-theme;
-  }
-
-  &.disabled {
-    color: $color-text-sub;
-    pointer-events: none;
-    cursor: not-allowed;
+    color: $color-theme;
+    background-color: #f4fafc;
   }
 }

@@ -1,6 +1,11 @@
 /* stylelint-disable */
 ngb-datepicker {
+  min-width: 0 !important;
   max-height: none !important;
+
+  &.dropdown-menu {
+    z-index: $z-index-dropdown;
+  }
 
   .ngb-dp-arrow-btn {
     background-color: transparent;
@@ -19,6 +24,7 @@ ngb-datepicker {
   }
 
   .btn-light.bg-primary {
+    border-radius: 3px;
     background-color: $color-theme;
   }
 

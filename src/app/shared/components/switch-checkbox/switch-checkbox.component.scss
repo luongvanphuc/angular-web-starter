@@ -1,0 +1,88 @@
+@import "tools/index";
+@import "settings/index";
+
+/* stylelint-disable */
+
+$width: 40px;
+$height: 22px;
+$font-size: 8px;
+$gap: 4px;
+$slider-size: $height - $gap * 2;
+
+:host {
+  height: $height;
+}
+
+.switch-checkbox {
+  position: relative;
+  display: inline-block;
+  width: $width;
+  height: $height;
+}
+
+.on,
+.off {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  transition: $transition-common;
+  user-select: none;
+  cursor: pointer;
+  display: none;
+
+  @include center-y-absolute;
+}
+
+.off {
+  right: $gap;
+}
+
+.on {
+  left: $gap;
+}
+
+.input {
+  display: none;
+
+  &:checked + .slider {
+    background-color: $color-theme;
+    box-shadow: inset -1px 1px 1px 0 rgba(0, 0, 0, 0.09), inset 0 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:checked + .slider::before {
+    box-shadow: -1px 1px 1px 0 rgba(0, 0, 0, 0.13);
+    transform: translateX($width - $gap * 2 - $slider-size);
+  }
+
+  &:not(:checked) ~ .off,
+  &:checked ~ .on {
+    display: block;
+  }
+
+  &:focus + .slider {
+    box-shadow: 0 0 1px $color-theme;
+  }
+}
+
+.slider {
+  background-color: $color-gray-5;
+  border-radius: 100px;
+  transition: $transition-common;
+  box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.09);
+  cursor: pointer;
+
+  @include fullwidth-absolute;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: $slider-size;
+    width: $slider-size;
+    left: $gap;
+    bottom: $gap;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.13);
+    transition: $transition-common;
+  }
+}
