@@ -10,7 +10,7 @@ const FILE_ACCESSOR: any = {
 };
 
 @Component({
-  selector: 'nj-file-upload',
+  selector: 'app-file-upload',
   templateUrl: './file-upload.component.html',
   providers: [
     FILE_ACCESSOR,

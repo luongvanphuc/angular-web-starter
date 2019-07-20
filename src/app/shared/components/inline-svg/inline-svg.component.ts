@@ -2,7 +2,7 @@ import { Component, Input, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'nj-inline-svg',
+  selector: 'app-inline-svg',
   template: '<ng-content></ng-content>',
   styles: [':host { line-height: 0 }'],
 })

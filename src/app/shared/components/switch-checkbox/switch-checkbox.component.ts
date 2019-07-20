@@ -8,7 +8,7 @@ const CUSTOM_VALUE_ACCESSOR = {
 };
 
 @Component({
-  selector: 'nj-switch-checkbox',
+  selector: 'app-switch-checkbox',
   templateUrl: './switch-checkbox.component.html',
   styleUrls: ['./switch-checkbox.component.scss'],
   providers: [

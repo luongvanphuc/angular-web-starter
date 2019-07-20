@@ -4,7 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalDataModel } from './alert-modal.model';
 
 @Component({
-  selector: 'nj-alert-modal',
+  selector: 'app-alert-modal',
   templateUrl: './alert-modal.component.html',
   styleUrls: ['./alert-modal.component.scss'],
 })

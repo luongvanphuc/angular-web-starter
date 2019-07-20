@@ -11,7 +11,7 @@ const IMAGE_ACCESSOR: any = {
 };
 
 @Component({
-  selector: 'nj-image-upload',
+  selector: 'app-image-upload',
   templateUrl: './image-upload.component.html',
   styleUrls: ['./image-upload.component.scss'],
   providers: [

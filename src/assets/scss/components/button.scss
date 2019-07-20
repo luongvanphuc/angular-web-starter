@@ -127,7 +127,7 @@ $btn-side-padding: 30px;
 
   &::after {
     content: '\f021'; // icon-refresh
-    font-family: 'icon-font';
+    font-family: 'icon-font', sans-serif;
     color: #ffffff;
     animation: spin 2s infinite linear;
     position: absolute;
@@ -151,7 +151,7 @@ $btn-side-padding: 30px;
 
   &::after {
     content: "\f141"; // icon-ellipsis-h
-    font-family: 'b3shark';
+    font-family: 'icon-font', sans-serif;
   }
 
   &:hover {
