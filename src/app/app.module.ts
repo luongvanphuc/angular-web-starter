@@ -1,33 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { AppComponent } from './app.component';
 import { AppInitializerModule } from '@shared/app-initializer/app-initializer.module';
-import { AppRoutingModule } from './app-routing.module';
-import { MainComponent, HeaderComponent, FooterComponent } from './layout';
 import { EntityModule } from '@entities/entities.module';
 import { SharedModule } from '@shared/shared.module';
-import { GlobalServices } from '@services';
 import { AuthJWTService } from '@auth/auth-jwt.service';
 import { AuthInterceptor } from '@interceptors';
 import { ErrorModule } from './error/error.module';
+import { LayoutModule } from './layout/layout.module';
+import { HomepageModule } from './homepage/homepage.module';
 
 @NgModule({
   declarations: [
-    MainComponent,
-    HeaderComponent,
-    FooterComponent,
+    AppComponent,
   ],
   imports: [
+    RouterModule.forRoot([], { preloadingStrategy: PreloadAllModules }),
     BrowserModule,
-    AppRoutingModule,
     AppInitializerModule,
+    LayoutModule,
     EntityModule,
     SharedModule,
     ErrorModule,
+    HomepageModule,
   ],
   providers: [
-    ...GlobalServices,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
@@ -37,6 +37,6 @@ import { ErrorModule } from './error/error.module';
       ],
     },
   ],
-  bootstrap: [MainComponent],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

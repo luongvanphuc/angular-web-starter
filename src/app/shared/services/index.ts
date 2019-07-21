@@ -7,9 +7,9 @@ import { AlertModalService } from '@components/alert-modal/alert-modal.service';
 import { ConfirmModalService } from '@components/confirm-modal/confirm-modal.service';
 
 export {
-  WindowRef,
   EventManager,
   PrincipalService,
+  WindowRef,
   StateStorageService,
   AlertModalService,
   ConfirmModalService,
@@ -17,14 +17,11 @@ export {
 
 // to use spead operator in shared-common.module.ts file
 export const Services = [
+  EventManager,
+  PrincipalService,
   WindowRef,
   AuthJWTService,
   StateStorageService,
   AlertModalService,
   ConfirmModalService,
-];
-
-export const GlobalServices = [
-  EventManager,
-  PrincipalService,
 ];

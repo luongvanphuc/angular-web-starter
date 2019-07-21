@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host schooltalk-admin --port 9003",
     "build": "ng build --configuration=production",
     "build:stats": "npm run build:prod -- --stats-json",
     "lint": "nodemon --exec \"npm run lint:all || exit 1\" --ext ts,html,scss",
