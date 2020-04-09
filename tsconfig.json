@@ -21,7 +21,7 @@
     ],
     "paths": {
       "@app-constant": [
-        "src/app/app.constant"
+        "src/app/app.constant.ts"
       ],
       "@entities/*": [
         "src/app/entities/*"

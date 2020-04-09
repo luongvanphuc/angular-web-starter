@@ -75,8 +75,8 @@ export class ModalService {
     this.renderer2.addClass(this.document.body, this.modalOpenClass);
 
     // store for destroying later
-    const resolve = () => null;
-    const result = new Promise(resolve);
+    let resolve = () => null;
+    const result = new Promise(r => resolve = r);
     this.modalDatas.push({
       resolve,
       childComponentRef: componentRef,
