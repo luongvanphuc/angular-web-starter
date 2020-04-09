@@ -6,6 +6,7 @@
   .text {
     padding-left: 23px;
     display: inline-block;
+    user-select: none;
 
     &::before,
     &::after {
