@@ -3,8 +3,8 @@
 1. `yarn install`
 2. `yarn start` and `yarn lint` in two separate terminal windows/tabs
 
-Techs: Angular 7, SCSS, Angular Bootstrap components (not including bootstrap styles), TSLint, Stylelint, nodemon
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+Techs: Angular 9, SCSS, TSLint, Stylelint, nodemon
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4
 
 ## Development server
 

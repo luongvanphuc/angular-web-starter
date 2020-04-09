@@ -12,7 +12,7 @@
     "lint:all": "npm run lint:scripts && npm run lint:styles",
     "lint:scripts": "ng lint",
     "lint:styles": "stylelint \"src/**/*.scss\"",
-    "bundle-report": "webpack-bundle-analyzer dist/web/stats.json",
+    "bundle-report": "webpack-bundle-analyzer dist/web/stats-es2015.json",
     "e2e": "ng e2e"
   },
   "private": true,
