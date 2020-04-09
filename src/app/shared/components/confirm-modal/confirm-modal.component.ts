@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ConfirmModalDataModel } from './confirm-modal.model';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-confirm-modal',
@@ -18,7 +18,7 @@ export class ConfirmModalComponent implements OnInit {
   yesButtonClass = '';
   noButtonClass = '';
 
-  constructor(public activeModal: NgbActiveModal) { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit() {
     if (this.data) {
@@ -31,7 +31,11 @@ export class ConfirmModalComponent implements OnInit {
     }
   }
 
+  close() {
+    this.modalService.close();
+  }
+
   submit() {
-    this.activeModal.close('yes');
+    this.modalService.submit();
   }
 }

@@ -9,36 +9,26 @@
 .modal {
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  z-index: $z-index-modal;
-  display: none;
-  overflow: hidden;
-  outline: 0;
-
-  .modal-open & {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  &.transparent {
-    .modal-content,
-    .modal-header {
-      background-color: transparent;
-    }
-  }
-}
-
-// Shell div to position the modal with bottom padding
-.modal-dialog {
-  position: relative;
   width: 100vw;
-  margin: 60px auto;
+  height: calc(100vh - 80px);
+  margin: 40px 0;
+  z-index: $z-index-modal;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  // center
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
   // allow clicks to pass through for custom click handling to close modal
   pointer-events: none;
 
-  @include flex-center;
+  &--centered {
+    align-items: center;
+  }
 }
 
 .modal-content {
@@ -74,6 +64,7 @@
     color: $color-gray-2;
     background-color: $color-gray-5;
     cursor: pointer;
+    padding: 0;
   }
 }
 
@@ -106,15 +97,7 @@
   bottom: 0;
   left: 0;
   z-index: $z-index-modal-backdrop !important;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  &.fade {
-    opacity: 0;
-  }
-
-  &.show {
-    opacity: 1;
-  }
+  background-color: rgba(43, 43, 82, 0.24);
 }
 
 @keyframes fadeIn {

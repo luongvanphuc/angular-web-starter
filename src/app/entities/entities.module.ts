@@ -6,9 +6,6 @@ import { UserModule } from './user/user.module';
   imports: [
     UserModule,
   ],
-  declarations: [],
-  entryComponents: [],
-  providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class EntityModule { }

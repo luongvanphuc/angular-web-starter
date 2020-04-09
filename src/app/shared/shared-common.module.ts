@@ -7,8 +7,6 @@ import { Services } from './services';
 import { Components } from './components';
 import { Directives } from './directives';
 import { Pipes } from './pipes';
-import { AlertModalComponent } from '@components/alert-modal/alert-modal.component';
-import { ConfirmModalComponent } from '@components/confirm-modal/confirm-modal.component';
 
 @NgModule({
   imports: [
@@ -21,10 +19,6 @@ import { ConfirmModalComponent } from '@components/confirm-modal/confirm-modal.c
   ],
   providers: [
     ...Services,
-  ],
-  entryComponents: [
-    AlertModalComponent,
-    ConfirmModalComponent,
   ],
   exports: [
     SharedLibsModule,

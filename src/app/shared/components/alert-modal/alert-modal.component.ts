@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { AlertModalDataModel } from './alert-modal.model';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-alert-modal',
@@ -15,7 +15,7 @@ export class AlertModalComponent implements OnInit {
   content = '';
   buttonLabel = 'OK';
 
-  constructor(public activeModal: NgbActiveModal) { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit() {
     if (this.data) {
@@ -25,7 +25,7 @@ export class AlertModalComponent implements OnInit {
     }
   }
 
-  submit() {
-    this.activeModal.close();
+  close() {
+    this.modalService.close();
   }
 }

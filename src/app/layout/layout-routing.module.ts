@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainRootComponent } from './main-root/main-root.component';
 import { MainComponent } from './main/main.component';
-import { HomepageComponent } from '../homepage/homepage.component';
 
 const lazyRoutes: Routes = [
   {
@@ -15,10 +14,6 @@ const lazyRoutes: Routes = [
         path: '',
         pathMatch: 'full',
         loadChildren: () => import('../homepage/homepage.module').then(m => m.HomepageModule),
-      },
-      {
-        path: 'cheatsheet',
-        loadChildren: () => import('../cheatsheet/cheatsheet.module').then(m => m.CheatsheetModule),
       },
     ],
   },

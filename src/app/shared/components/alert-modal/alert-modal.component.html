@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <button data-dismiss="modal" class="close" type="button" (click)="activeModal.dismiss('closed')">
+  <button data-dismiss="modal" class="close" type="button" (click)="close()">
     <i class="icon icon-cancel icon--sm"></i>
   </button>
 </div>
@@ -11,6 +11,6 @@
     <div [innerHTML]="content | safeHtml" *ngIf="content"></div>
   </div>
   <div class="text-center">
-    <button type="button" class="btn btn--fixed" (click)="submit()">{{ buttonLabel }}</button>
+    <button type="button" class="btn btn--fixed" (click)="close()">{{ buttonLabel }}</button>
   </div>
 </div>

@@ -1,37 +1,16 @@
 import { Injectable } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ConfirmModalComponent } from './confirm-modal.component';
 import { ConfirmModalDataModel } from './confirm-modal.model';
+import { ModalService } from '../../services/modal.service';
 
 @Injectable()
-
 export class ConfirmModalService {
 
-  private isOpen = false;
-
-  constructor(
-    private modalService: NgbModal,
-  ) { }
+  constructor(private modalService: ModalService) { }
 
   open(data?: ConfirmModalDataModel) {
-    if (this.isOpen) {
-      return;
-    }
-
-    this.isOpen = true;
-    const modalRef = this.modalService.open(ConfirmModalComponent);
-
-    if (data) {
-      modalRef.componentInstance.data = data;
-    }
-
-    modalRef.result.then(() => {
-      this.isOpen = false;
-    }, () => {
-      this.isOpen = false;
-    });
-
-    return modalRef;
+    const modalRef = this.modalService.open(ConfirmModalComponent, { centered: true }, data);
+    return modalRef.result;
   }
 }
