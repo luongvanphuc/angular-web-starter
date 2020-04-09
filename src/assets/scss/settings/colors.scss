@@ -3,22 +3,21 @@ $color-theme: #1264e2;
 $color-red: #ff3b3f;
 $color-orange: #f6a926;
 $color-green: #19a699;
-$color-gray-1: #525c65;
-$color-gray-2: #757d84;
-$color-gray-3: #979da3;
-$color-gray-4: #b9bdc0;
-$color-gray-5: #dcdee0;
-$color-gray-6: #f6f7f7;
+$color-gray-1: #333333;
+$color-gray-2: #979da3;
+$color-gray-3: #b9bdc0;
+$color-gray-4: #dddfe2;
+$color-gray-5: #eeeff1;
+$color-gray-6: #f2f2f2;
 
 // alias colors
 $color-danger: $color-red;
 $color-warning: $color-orange;
 $color-success: $color-green;
 $color-text: $color-gray-1;
-$color-text-gray: $color-gray-2;
-$color-text-sub: $color-gray-3;
-$color-border: $color-gray-5;
-$color-border-light: rgba($color-gray-5, 0.5);
+$color-text-sub: $color-gray-2;
+$color-border: $color-gray-4;
+$color-border-light: $color-gray-5;
 $color-background-gray-light: $color-gray-6;
 
 // other colors

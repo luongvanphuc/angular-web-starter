@@ -38,12 +38,12 @@
 
 .ng-dropdown-panel .ng-dropdown-panel-items {
   .ng-option {
-    color: $color-text-gray !important;
+    color: $color-text-sub !important;
     font-size: 13px !important;
     font-weight: 600 !important;
 
     &.ng-option-marked {
-      color: $color-text-gray !important;
+      color: $color-text-sub !important;
       background-color: $color-background-gray-light !important;
     }
 
